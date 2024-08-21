@@ -1,5 +1,5 @@
 body {
- font-family: sans-serif;
+  font-family: sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-    color: #333;
+  color: #333;
   font-size: 2.5em;
   margin-bottom: 30px;
 }
@@ -29,7 +29,6 @@ h1 {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 label {
@@ -38,29 +37,16 @@ label {
   margin-bottom: 8px;
 }
 
-#weight,
-#airline,
-#service-security,
-#cargo-handling,
-#uld
-
-{
+input, select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
   box-sizing: border-box;
   font-size: 16px;
+  margin-bottom: 15px; /* Adds spacing between input fields */
 }
 
-
-form-group {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    
-}
-    
 button {
   background-color: #4CAF50;
   color: white;
@@ -71,13 +57,14 @@ button {
   width: 100%;
   font-size: 18px;
   transition: background-color 0.3s ease;
+  margin-top: 10px; /* Adds spacing above the button */
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-    #totalCharge {
+#totalCharge {
   margin-top: 30px;
   font-size: 20px;
   font-weight: bold;
@@ -85,32 +72,30 @@ button:hover {
 }
 
 #totalCharge strong {
-    font-size: 18px;
-    color: #2c3e50;
+  font-size: 18px;
+  color: #2c3e50;
 }
 
 #totalCharge .charge-amount {
-    font-size: 18px;
-    color: #e74c3c;
+  font-size: 18px;
+  color: #e74c3c;
 }
 
 #totalCharge .weight {
-    color: #3498db;
+  color: #3498db;
 }
 
 #totalCharge .airline {
-    color: #9b59b6;
+  color: #9b59b6;
 }
 
 #totalCharge .cargo-handling {
-    color: #27ae60;
+  color: #27ae60;
 }
 
 #totalCharge .uld {
-    color: #f39c12;
+  color: #f39c12;
 }
-
-
 
 /* Responsive Styling (Optional) */
 @media (max-width: 450px) {
@@ -118,11 +103,3 @@ button:hover {
     width: 90%;
   }
 }
-
-
-
-    
-
-
-
-    

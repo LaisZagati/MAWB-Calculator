@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAWB Storage Charge Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MAWB Charges Calculator</h1>
+        <p class="info">Effective from 1st July 2024 onwards:</p>
+        <form id="storageForm">
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter weight in kg" required>
+            </div>
+            <div class="form-group">
+                <label for="airline">Airline:</label>
+                <select id="airline" name="airline" required>
+                    <option value="">Select Airline</option>
+                    <option value="WFS">WFS</option>
+                    <option value="SWISSPORT">SWISSPORT</option>
+                    <option value="IAG">IAG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service-security">Include Service & Security:</label>
+                <select id="service-security" name="service-security" required>
+                    <option value="">Select Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cargo-handling">Include Cargo Handling:</label>
+                <select id="cargo-handling">
+                    <option value="">Select Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="uld">Include ULD:</label>
+                <select id="uld">
+                    <option value="">Select Option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Extra fields for number of ULDs and days -->
+            <div class="form-group" id="numDaysGroup" style="display:none;">
+                <label for="numDays">Number of Extra Days:</label>
+                <input type="number" id="numDays" name="numDays" placeholder="Enter number of days" min="0">
+            </div>
+            <div class="form-group" id="numULDsGroup" style="display:none;">
+                <label for="numULDs">Number of ULDs:</label>
+                <input type="number" id="numULDs" name="numULDs" placeholder="Enter number of ULDs" min="0">
+            </div>
+            <button type="submit">Calculate Total Charge</button>
+        </form>
+        <div id="totalCharge"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

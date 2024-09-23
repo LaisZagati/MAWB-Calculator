@@ -66,7 +66,11 @@ document.getElementById('storageForm').addEventListener('submit', function(event
     } else if (airline === 'IAG') {
         if (includeServiceSecurity) {
             // serviceSecurityCharge = Math.max(weight * 0.009, 12.00) + 5.00;
-            serviceSecurityCharge = Math.max(weight * 0.009, 17.00);
+            serviceSecurityCharge = Math.max(weight * 0.009, 12.00);
+        // Add +5 only if the charge is less than or equal to 12.00
+        if (serviceSecurityCharge <= 12.00) {
+            serviceSecurityCharge += 5.00;
+        }
         }
         if (includeCargoHandling) {
             cargoHandlingCharge = Math.max(weight * 0.265, 33.00);

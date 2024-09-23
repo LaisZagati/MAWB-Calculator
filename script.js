@@ -8,6 +8,9 @@ document.getElementById('storageForm').addEventListener('submit', function(event
     const includeULD = document.getElementById('uld').value === 'yes';
 
 
+    // Log inputs
+    console.log('Inputs:', { weight, airline, includeServiceSecurity, includeCargoHandling, includeULD });
+
 
 
     
@@ -17,15 +20,18 @@ document.getElementById('storageForm').addEventListener('submit', function(event
     // Prompt for number of ULDs if needed
     if (includeULD && (airline === 'IAG' || airline === 'WFS')) {
         numULDs = parseInt(prompt("Enter the number of ULDs used:")) || 0;
+        console.log('Number of ULDs after prompt:', numULDs);
     }
 
     // Prompt for number of extra days if needed
     if (airline === 'SWISSPORT' && numDays > 0) {
         alert(`The shipment was recovered after 12 hours. Storage charges for ${numDays} days have been applied.`);
+        console.log('Number of days for Swissport (manual entry):', numDays);
     } else if (airline === 'SWISSPORT') {
         const recoveredAfter12Hours = confirm("Was the shipment recovered after 12 hours? If yes, input the number of extra days.");
         if (recoveredAfter12Hours) {
             numDays = parseInt(prompt("Enter the number of extra days:")) || 0;
+            console.log('Number of extra days after prompt:', numDays);
         }
     }
 
@@ -59,7 +65,8 @@ document.getElementById('storageForm').addEventListener('submit', function(event
         }
     } else if (airline === 'IAG') {
         if (includeServiceSecurity) {
-            serviceSecurityCharge = Math.max(weight * 0.009, 12.00) + 5.00;
+            // serviceSecurityCharge = Math.max(weight * 0.009, 12.00) + 5.00;
+            serviceSecurityCharge = Math.max(weight * 0.009, 17.00);
         }
         if (includeCargoHandling) {
             cargoHandlingCharge = Math.max(weight * 0.265, 33.00);
@@ -69,11 +76,21 @@ document.getElementById('storageForm').addEventListener('submit', function(event
         }
     }
 
+      // Log calculated charges
+    console.log('Service & Security Charge:', serviceSecurityCharge);
+    console.log('Cargo Handling Charge:', cargoHandlingCharge);
+    console.log('ULD Charge:', uldCharge);
+
+
     let totalCharge = serviceSecurityCharge + cargoHandlingCharge + uldCharge;
 
     if (weight <= 225) {
         totalCharge = Math.max(totalCharge, 80); // Minimum charge for weights up to 225 kg
+        console.log('Applied minimum charge for weight <= 225kg:', totalCharge);
     }
+
+        console.log('Total Charge:', totalCharge);
+
 
     document.getElementById('totalCharge').innerHTML = `
         <strong>Total Charge:</strong> <span class="charge-amount">€${totalCharge.toFixed(2)}</span><br>

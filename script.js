@@ -27,7 +27,7 @@ document.getElementById('storageForm').addEventListener('submit', function(event
     if (airline === 'SWISSPORT' && numDays > 0) {
         alert(`The shipment was recovered after 12 hours. Storage charges for ${numDays} days have been applied.`);
         console.log('Number of days for Swissport (manual entry):', numDays);
-    } else if (airline === 'SWISSPORT') {
+    } else if (airline === 'SWISSPORT' && includeULD) {
         const recoveredAfter12Hours = confirm("Was the shipment recovered after 12 hours? If yes, input the number of extra days.");
         if (recoveredAfter12Hours) {
             numDays = parseInt(prompt("Enter the number of extra days:")) || 0;

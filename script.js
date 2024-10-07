@@ -51,7 +51,7 @@ document.getElementById('storageForm').addEventListener('submit', function(event
             cargoHandlingCharge = Math.max(weight * 0.26, 35.08);
         }
         if (includeULD) {
-            uldCharge = Math.max(weight * 0.156, 227.99) * numULDs;
+            uldCharge = Math.max(weight * 0.156, 227.99 * numULDs);
         }
     } else if (airline === 'SWISSPORT') {
         if (includeServiceSecurity) {

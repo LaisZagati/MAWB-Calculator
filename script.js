@@ -76,7 +76,7 @@ document.getElementById('storageForm').addEventListener('submit', function(event
             cargoHandlingCharge = Math.max(weight * 0.265, 33.00);
         }
         if (includeULD) {
-            uldCharge = Math.max(weight * 0.14, 205.00) * numULDs;
+            uldCharge = Math.max(weight * 0.14, 205.00 * numULDs);
         }
     }
 

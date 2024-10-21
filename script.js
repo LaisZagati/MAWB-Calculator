@@ -71,7 +71,6 @@ document.getElementById('storageForm').addEventListener('submit', function(event
         //if (serviceSecurityCharge <= 12.00) {
             //serviceSecurityCharge += 5.00;
         }
-        }
         if (includeCargoHandling) {
             cargoHandlingCharge = Math.max(weight * 0.265, 33.00);
         }

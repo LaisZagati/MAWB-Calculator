@@ -45,31 +45,27 @@ document.getElementById('storageForm').addEventListener('submit', function(event
 
     if (airline === 'WFS') {
         if (includeServiceSecurity) {
-            serviceSecurityCharge = Math.max(weight * 0.043, 20.61);
+            serviceSecurityCharge = Math.max(weight * 0.045, 21.64);
         }
         if (includeCargoHandling) {
-            cargoHandlingCharge = Math.max(weight * 0.26, 35.08);
+            cargoHandlingCharge = Math.max(weight * 0.273, 36.83);
         }
         if (includeULD) {
-            uldCharge = Math.max(weight * 0.156, 227.99 * numULDs);
+            uldCharge = Math.max(weight * 0.164, 239.39 * numULDs);
         }
     } else if (airline === 'SWISSPORT') {
         if (includeServiceSecurity) {
-            serviceSecurityCharge = Math.max(weight * 0.038, 18.34);
+            serviceSecurityCharge = Math.max(weight * 0.04, 19.57);
         }
         if (includeCargoHandling) {
-            cargoHandlingCharge = Math.max(weight * 0.265, 33.32);
+            cargoHandlingCharge = Math.max(weight * 0.283, 35.55);
         }
         if (includeULD) {
-            uldCharge = Math.max(weight * 0.155, 228.20) + (numDays * 33.63);
+            uldCharge = Math.max(weight * 0.166, 243.49) + (numDays * 40.00);
         }
     } else if (airline === 'IAG') {
         if (includeServiceSecurity) {
             serviceSecurityCharge = Math.max(weight * 0.009, 12.00) + 5.00;
-            //serviceSecurityCharge = Math.max(weight * 0.009, 12.00);
-        // Add +5 only if the charge is less than or equal to 12.00
-        //if (serviceSecurityCharge <= 12.00) {
-            //serviceSecurityCharge += 5.00;
         }
         if (includeCargoHandling) {
             cargoHandlingCharge = Math.max(weight * 0.265, 33.00);

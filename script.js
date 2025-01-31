@@ -65,13 +65,13 @@ document.getElementById('storageForm').addEventListener('submit', function(event
         }
     } else if (airline === 'IAG') {
         if (includeServiceSecurity) {
-            serviceSecurityCharge = Math.max(weight * 0.009, 12.00) + 5.00;
+            serviceSecurityCharge = Math.max(weight * 0.009, 12.75) + 5.25;
         }
         if (includeCargoHandling) {
-            cargoHandlingCharge = Math.max(weight * 0.265, 33.00);
+            cargoHandlingCharge = Math.max(weight * 0.27, 38.50);
         }
         if (includeULD) {
-            uldCharge = Math.max(weight * 0.14, 205.00 * numULDs);
+            uldCharge = Math.max(weight * 0.15, 217.00 * numULDs);
         }
     }
 
